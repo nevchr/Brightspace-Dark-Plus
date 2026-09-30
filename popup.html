@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brightspace Dark+</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+
+      body {
+        box-sizing: border-box;
+        width: 310px;
+        margin: 0;
+        padding: 18px;
+        background: #161718;
+        color: #e3e9f1;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .brand img {
+        width: 36px;
+        height: 36px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.35;
+      }
+
+      p {
+        margin: 0;
+        color: #b1b9be;
+        font-size: 0.875rem;
+        line-height: 1.45;
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+        color: #e3e9f1;
+        font-weight: 600;
+      }
+
+      .status::before {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #46a661;
+        content: "";
+      }
+
+      .status[data-state="checking"]::before,
+      .status[data-state="ready"]::before {
+        background: #e0aa4f;
+      }
+
+      .status[data-state="off"]::before,
+      .status[data-state="error"]::before {
+        background: #d66767;
+      }
+
+      .detail {
+        min-height: 40px;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 14px;
+        padding: 10px 12px;
+        border: 1px solid #56b4f8;
+        border-radius: 7px;
+        background: #185f8f;
+        color: #fff;
+        font: inherit;
+        font-weight: 650;
+        cursor: pointer;
+      }
+
+      button:hover,
+      button:focus-visible {
+        background: #2179b3;
+      }
+
+      button[data-action="disable"] {
+        border-color: #5f666b;
+        background: #2b2e30;
+      }
+
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .disclaimer {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #313437;
+        color: #8f989f;
+        font-size: 0.75rem;
+      }
+
+      a {
+        color: #8acbfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="brand">
+      <img src="assets/icons/icon48.png" alt="" />
+      <h1>Brightspace Dark+</h1>
+    </div>
+    <p id="status" class="status" data-state="checking" aria-live="polite">Checking this tab…</p>
+    <p id="detail" class="detail">Open your school's Brightspace site to enable the theme.</p>
+    <button id="site-action" type="button" hidden></button>
+    <p class="disclaimer">
+      Unofficial extension. Not affiliated with D2L or any educational institution.
+      <a href="https://chrisneville.ca/brightspace-dark-plus/privacy/" target="_blank" rel="noreferrer">Privacy</a>
+    </p>
+    <script src="popup.js"></script>
+  </body>
+</html>
