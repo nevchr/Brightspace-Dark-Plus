@@ -2,6 +2,10 @@
 
 An opt-in Chrome Manifest V3 extension that applies an adaptive dark theme to Brightspace learning environments. Version 1.1.0 supports modern components and legacy pages. It does not collect course records or operate an account.
 
+## Requirements
+
+Chrome 119 or newer is required by the manifest. The extension uses JavaScript and CSS directly: no dependency installation or build is needed. Node.js 20+ is needed only to run the source tests. Live Brightspace page compatibility still needs manual checks described below.
+
 ## Install from source
 
 1. Clone this repository.
